@@ -99,13 +99,8 @@ class Login:
             if row==None:
                 messagebox.showerror("Error","Invalid Username and Password!")
             else:
-                open_min=messagebox.askyesno("YesNo","Access only Admin")
-                if open_min>0:
-                    self.new_window=Toplevel(self.root)
-                    self.app=Face_Recognition_System(self.new_window)
-                else:
-                    if not open_min:
-                        return
+                self.new_window=Toplevel(self.root)
+                self.app=Face_Recognition_System(self.new_window)
             conn.commit()
             conn.close()
 #=======================Reset Passowrd Function=============================
@@ -337,10 +332,6 @@ class Face_Recognition_System:
     def open_img(self):
         os.startfile("dataset")
     
-  
-
-
-
 
 if __name__ == "__main__":
     root=Tk()

@@ -87,18 +87,14 @@ class Face_Recognition:
                 conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
                 cursor = conn.cursor()
 
-                cursor.execute("select Name from student where Student_ID="+str(1))
-                n=('Shreya mokra')
-                n="+".join(n)
+                cursor.execute("select Name from student where Roll_No="+str(id))
+                n=cursor.fetchone()
 
-                cursor.execute("select Roll_No from student where Student_ID="+str(id))
-                r=('2')
-                r="+".join(r)
+                cursor.execute("select Roll_No from student where Roll_No="+str(id))
+                r=cursor.fetchone()
 
-                cursor.execute("select Student_ID from student where Student_ID="+str(id))
-                i=(33)
-                i="+".join(i)
-
+                cursor.execute("select Student_ID from student where Roll_No="+str(id))
+                i=cursor.fetchone()
 
                 if confidence > 77:
                     cv2.putText(img,f"Student_ID:{i}",(x,y-80),cv2.FONT_HERSHEY_COMPLEX,0.8,(64,15,223),2)
