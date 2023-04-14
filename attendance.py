@@ -242,7 +242,7 @@ class Attendance:
             try:
                 Update=messagebox.askyesno("Update","Do you want to Update this Student Attendance!",parent=self.root)
                 if Update > 0:
-                    conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3307)
+                    conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
                     mycursor = conn.cursor()
                     mycursor.execute("update stdattendance set std_id=%s,std_roll_no=%s,std_name=%s,std_time=%s,std_date=%s,std_attendance=%s where std_id=%s",( 
                     self.var_id.get(),
@@ -285,7 +285,7 @@ class Attendance:
                 messagebox.showinfo("Delete","Successfully Deleted!",parent=self.root)
             except Exception as es:
                 messagebox.showerror("Error",f"Due to: {str(es)}",parent=self.root)  
-    # ===========================fatch data form mysql attendance===========
+    # ===========================fetch data form mysql attendance===========
 
     def fetch_data(self):
         conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
@@ -346,7 +346,7 @@ class Attendance:
         except Exception as es:
                 messagebox.showerror("Error",f"Due to: {str(es)}",parent=self.root)    
 
-    #=============Cursur Function for CSV========================
+    #=============Cursor Function for CSV========================
 
     def get_cursor_left(self,event=""):
         cursor_focus = self.attendanceReport_left.focus()
@@ -360,7 +360,7 @@ class Attendance:
         self.var_date.set(data[4]),
         self.var_attend.set(data[5])  
 
-     #=============Cursur Function for mysql========================
+     #=============Cursor Function for mysql========================
 
     def get_cursor_right(self,event=""):
         cursor_focus = self.attendanceReport.focus()

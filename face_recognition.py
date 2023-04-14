@@ -27,7 +27,7 @@ class Face_Recognition:
         f_lb1 = Label(self.root,image=self.photoimg)
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
-        # backgorund image 
+        # background image 
         bg1=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\bg2.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
@@ -87,14 +87,19 @@ class Face_Recognition:
                 conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
                 cursor = conn.cursor()
 
-                cursor.execute("select Name from student where Roll_No="+str(id))
+                cursor.execute("select Name from student where Student_ID="+str(id))
                 n=cursor.fetchone()
+                n="+".join(n)
 
-                cursor.execute("select Roll_No from student where Roll_No="+str(id))
+                cursor.execute("select Roll_No from student where Student_ID="+str(id))
                 r=cursor.fetchone()
+                r="+".join(r)
 
-                cursor.execute("select Student_ID from student where Roll_No="+str(id))
+
+                cursor.execute("select Student_ID from student where Student_ID="+str(id))
                 i=cursor.fetchone()
+                i="+".join(i)
+
 
                 if confidence > 77:
                     cv2.putText(img,f"Student_ID:{i}",(x,y-80),cv2.FONT_HERSHEY_COMPLEX,0.8,(64,15,223),2)

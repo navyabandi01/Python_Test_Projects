@@ -161,7 +161,7 @@ class Student:
 
         #combo box 
         gender_combo=ttk.Combobox(class_Student_frame,textvariable=self.var_gender,width=13,font=("verdana",12,"bold"),state="readonly")
-        gender_combo["values"]=("Female")
+        gender_combo["values"]=("Female","Male","Don't want to mention")
         gender_combo.current(0)
         gender_combo.grid(row=2,column=1,padx=5,pady=5,sticky=W)
 
@@ -564,7 +564,7 @@ class Student:
                         cv2.putText(face,str(img_id),(50,50),cv2.FONT_HERSHEY_COMPLEX,2,(0,255,0),2)        
                         cv2.imshow("Capture Images",face)
 
-                    if cv2.waitKey(1)==13 or int(img_id)==100:
+                    if cv2.waitKey(1)==13 or int(img_id)==200:
                         break
                 cap.release()
                 cv2.destroyAllWindows()
