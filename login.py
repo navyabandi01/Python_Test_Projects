@@ -26,7 +26,7 @@ class Login:
         self.var_sa=StringVar()
         self.var_pwd=StringVar()
 
-        self.bg=ImageTk.PhotoImage(file=r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\loginBg1.jpg")
+        self.bg=ImageTk.PhotoImage(file=r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\loginBg1.jpg")
         
         lb1_bg=Label(self.root,image=self.bg)
         lb1_bg.place(x=0,y=0, relwidth=1,relheight=1)
@@ -34,7 +34,7 @@ class Login:
         frame1= Frame(self.root,bg="#002B53")
         frame1.place(x=560,y=170,width=340,height=450)
 
-        img1=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\log1.png")
+        img1=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\log1.png")
         img1=img1.resize((100,100),Image.ANTIALIAS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         lb1img1 = Label(image=self.photoimage1,bg="#002B53")
@@ -89,7 +89,7 @@ class Login:
             messagebox.showinfo("Sussessfully","Welcome to Attendance Managment System Using Facial Recognition")
         else:
             # messagebox.showerror("Error","Please Check Username or Password !")
-            conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+            conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
             mycursor = conn.cursor()
             mycursor.execute("select * from regteach where email=%s and pwd=%s",(
                 self.txtuser.get(),
@@ -112,7 +112,7 @@ class Login:
         elif(self.var_pwd.get()==""):
             messagebox.showerror("Error","Please Enter the New Password!",parent=self.root2)
         else:
-            conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+            conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
             mycursor = conn.cursor()
             query=("select * from regteach where email=%s and ss_que=%s and s_ans=%s")
             value=(self.txtuser.get(),self.var_ssq.get(),self.var_sa.get())
@@ -137,7 +137,7 @@ class Login:
         if self.txtuser.get()=="":
             messagebox.showerror("Error","Please Enter the Email ID to reset Password!")
         else:
-            conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+            conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
             mycursor = conn.cursor()
             query=("select * from regteach where email=%s")
             value=(self.txtuser.get(),)
@@ -199,7 +199,7 @@ class Face_Recognition_System:
 
 # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\banner.jpg")
+        img=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\20e4aed0-8fa5-4903-a908-1e92679dc5b4.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -208,7 +208,7 @@ class Face_Recognition_System:
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
         # backgorund image 
-        bg1=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\bg3.jpg")
+        bg1=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\bg3.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
@@ -224,7 +224,7 @@ class Face_Recognition_System:
         # Create buttons below the section 
         # ------------------------------------------------------------------------------------------------------------------- 
         # student button 1
-        std_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\std1.jpg")
+        std_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\std1.jpg")
         std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
@@ -235,7 +235,7 @@ class Face_Recognition_System:
         std_b1_1.place(x=250,y=280,width=180,height=45)
 
         # Detect Face  button 2
-        det_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\det1.jpg")
+        det_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\det1.jpg")
         det_img_btn=det_img_btn.resize((180,180),Image.ANTIALIAS)
         self.det_img1=ImageTk.PhotoImage(det_img_btn)
 
@@ -246,7 +246,7 @@ class Face_Recognition_System:
         det_b1_1.place(x=480,y=280,width=180,height=45)
 
          # Attendance System  button 3
-        att_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\att.jpg")
+        att_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\att.jpg")
         att_img_btn=att_img_btn.resize((180,180),Image.ANTIALIAS)
         self.att_img1=ImageTk.PhotoImage(att_img_btn)
 
@@ -262,7 +262,7 @@ class Face_Recognition_System:
         # ---------------------------------------------------------------------------------------------------------------------------
         # Start below buttons.........
          # Train   button 5
-        tra_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\tra1.jpg")
+        tra_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\tra1.jpg")
         tra_img_btn=tra_img_btn.resize((180,180),Image.ANTIALIAS)
         self.tra_img1=ImageTk.PhotoImage(tra_img_btn)
 
@@ -273,7 +273,7 @@ class Face_Recognition_System:
         tra_b1_1.place(x=250,y=510,width=180,height=45)
 
         # Photo   button 6
-        #pho_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\qr1.png")
+        #pho_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\qr1.png")
         #pho_img_btn=pho_img_btn.resize((180,180),Image.ANTIALIAS)
         #self.pho_img1=ImageTk.PhotoImage(pho_img_btn)
 
@@ -284,7 +284,7 @@ class Face_Recognition_System:
         #pho_b1_1.place(x=480,y=510,width=180,height=45)
 
         # Developers   button 7
-        dev_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\dev.jpg")
+        dev_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\dev.jpg")
         dev_img_btn=dev_img_btn.resize((180,180),Image.ANTIALIAS)
         self.dev_img1=ImageTk.PhotoImage(dev_img_btn)
 
@@ -295,7 +295,7 @@ class Face_Recognition_System:
         dev_b1_1.place(x=710,y=510,width=180,height=45)
 
         # exit   button 8
-        exi_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\exi.jpg")
+        exi_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\exi.jpg")
         exi_img_btn=exi_img_btn.resize((180,180),Image.ANTIALIAS)
         self.exi_img1=ImageTk.PhotoImage(exi_img_btn)
 

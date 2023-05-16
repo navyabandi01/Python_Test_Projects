@@ -19,7 +19,7 @@ class Face_Recognition:
 
         # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\banner.jpg")
+        img=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\20e4aed0-8fa5-4903-a908-1e92679dc5b4.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -28,7 +28,7 @@ class Face_Recognition:
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
         # background image 
-        bg1=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\bg2.jpg")
+        bg1=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\bg2.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
@@ -44,7 +44,7 @@ class Face_Recognition:
         # Create buttons below the section 
         # ------------------------------------------------------------------------------------------------------------------- 
         # Training button 1
-        std_img_btn=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\f_det.jpg")
+        std_img_btn=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\f_det.jpg")
         std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
@@ -84,7 +84,7 @@ class Face_Recognition:
 
                 confidence=int((100*(1-predict/300)))
 
-                conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
                 cursor = conn.cursor()
 
                 cursor.execute("select Name from student where Student_ID="+str(id))

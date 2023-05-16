@@ -34,7 +34,7 @@ class Attendance:
 
         # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\banner.jpg")
+        img=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\20e4aed0-8fa5-4903-a908-1e92679dc5b4.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -43,7 +43,7 @@ class Attendance:
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
         # backgorund image 
-        bg1=Image.open(r"C:\Users\saisa\Documents\Python_Test_Projects\Images_GUI\bg2.jpg")
+        bg1=Image.open(r"C:\Users\91789\Documents\Python_Test_Projects\Images_GUI\bg2.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
@@ -270,7 +270,7 @@ class Attendance:
             try:
                 delete=messagebox.askyesno("Delete","Do you want to Delete?",parent=self.root)
                 if delete>0:
-                    conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+                    conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
                     mycursor = conn.cursor() 
                     sql="delete from stdattendance where std_id=%s"
                     val=(self.var_id.get(),)
@@ -288,7 +288,7 @@ class Attendance:
     # ===========================fetch data form mysql attendance===========
 
     def fetch_data(self):
-        conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+        conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
         mycursor = conn.cursor()
 
         mycursor.execute("select * from stdattendance")
@@ -381,7 +381,7 @@ class Attendance:
             messagebox.showerror("Error","Please Fill All Fields are Required!",parent=self.root)
         else:
             try:
-                conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
+                conn = mysql.connector.connect(username='root', password='admin',host='localhost',database='face_recognition',port=3306)
                 mycursor = conn.cursor()
                 mycursor.execute("insert into stdattendance values(%s,%s,%s,%s,%s,%s)",(
                 self.var_id.get(),
